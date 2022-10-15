@@ -106,6 +106,8 @@ const twoSum = (nums, target) => {
 };
 
 //above was what i started with, and it did work with an initial sample test but is semi- incomplete, and takes too long to run. Second attempt below was written with the hint 'what if we 'locked' one number in the array.
+// issue: will use integers in one index twice if they = the target
+// ex: target = 10, and num[i] = 5, the loop will add num[i] and num[i]
 
 const twoSum2 = (nums, target) => {
   for (let i = 0; i < nums.length; i++) {
