@@ -87,3 +87,35 @@ console.log(
 );
 console.log(addNew("Burgers and fries"));
 console.log(addNew("New! Burgers and fries"));
+
+console.log("///////");
+console.log("Leetcode problems below");
+// given an array of integers (nums) and an integer target, return the indicies of the two numbers that add up to the target
+
+const twoSum = (nums, target) => {
+  let targetIndicies = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 1; j <= nums.length; j++) {
+      if (nums[i] + nums[j] == target) {
+        targetIndicies.push(i, j);
+        return targetIndicies;
+      }
+    }
+  }
+  return "Not Found";
+};
+
+//above was what i started with, and it did work with an initial sample test but is semi- incomplete, and takes too long to run. Second attempt below was written with the hint 'what if we 'locked' one number in the array.
+
+const twoSum2 = (nums, target) => {
+  for (let i = 0; i < nums.length; i++) {
+    let secondDigit = target - nums[i];
+    let found = nums.indexOf(secondDigit, i + 1);
+    if (found !== -1) {
+      return [i, found];
+    }
+  }
+  return "Not Found";
+};
+
+console.log(twoSum2([3, 2, 4], 6));
