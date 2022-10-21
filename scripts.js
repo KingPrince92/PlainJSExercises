@@ -121,3 +121,40 @@ const twoSum2 = (nums, target) => {
 };
 
 console.log(twoSum2([3, 2, 4], 6));
+
+let l1 = [2, 3, 4];
+let l2 = [5, 6, 4];
+
+const addTwoNumbers = (l1, l2) => {
+  let reversel1 = l1.reverse();
+  let reversel2 = l2.reverse();
+  reversel1.forEach;
+};
+
+addTwoNumbers(l1, l2);
+
+//valid parenthesis. Given a string of any combination of (), [] and {} return true if all parenthesis are opened and closed properly, and false if given combinations such as {] or (}
+
+const isValid = (s) => {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i += 1) {
+    const top = stack[stack.length - 1];
+    if (s[i] === "(" || s[i] === "{" || s[i] === "[") {
+      stack.push(s[i]);
+    } else if (s[i] === ")" && top === "(" && stack.length !== 0) {
+      stack.pop();
+    } else if (s[i] === "]" && top === "[" && stack.length !== 0) {
+      stack.pop();
+    } else if (s[i] === "}" && top === "{" && stack.length !== 0) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+
+  return stack.length === 0;
+};
+
+console.log(isValid("()[]{}"));
+//note: study up on Map data structure and Sets
